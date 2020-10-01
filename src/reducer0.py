@@ -13,6 +13,6 @@ for line in sys.stdin:
     
 vocabulary_words = sorted(vocabulary.keys())
 
-with open("vocabulary", 'w') as vocabulary_file:
+with open("../model/vocabulary", 'w') as vocabulary_file:
     for word in vocabulary_words:
         vocabulary_file.write(f"{word}\n")
