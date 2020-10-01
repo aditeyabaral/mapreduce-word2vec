@@ -8,4 +8,3 @@ for line in sys.stdin:
     unique_words = list(set(words))
     for word in unique_words:
         print(f"{word}\t1")
-

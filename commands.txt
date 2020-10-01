@@ -1,0 +1,6 @@
+cat ../data/sample.txt | python3 mapper0.py | sort -k 1,1 | python3 reducer0.py
+cat ../data/sample.txt | python3 mapper1.py 2 | sort -k 1,1 | python3 reducer1.py 2 100 > ../model/train
+
+cat ../data/test.txt | python3 mapper0.py | sort -k 1,1 | python3 reducer0.py
+cat ../data/test.txt | python3 mapper1.py 2 | sort -k 1,1 | python3 reducer1.py 2 100 > ../model/train
+
