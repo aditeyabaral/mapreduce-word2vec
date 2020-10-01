@@ -31,17 +31,16 @@ for line in sys.stdin:
     except ValueError:
         continue
 
-    mapped_context_indices = [word2index[word] for word in context_words]
-    mapped_middle_index = word2index[middle_word]
-
     X_vector = np.zeros((V, 1))
-    for index in mapped_context_indices:
+    for context_word in context_words:
+        context_word_index = word2index[context_word]
         word_vector = np.zeros((V, 1))
-        word_vector[index] = 1.0
+        word_vector[context_word_index] = 1.0
         X_vector += word_vector
     X_vector /= 2*C
 
     y_vector = np.zeros((V, 1))
+    mapped_middle_index = word2index[middle_word]
     y_vector[mapped_middle_index] = 1.0
 
     X = np.hstack((X, X_vector))
